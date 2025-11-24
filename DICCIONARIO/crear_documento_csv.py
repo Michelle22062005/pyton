@@ -8,6 +8,12 @@ productos = [
     ["Huevos", 15000, 30]
 ]
 
+#Ver si un archivo existe
+import os
+
+if os.path.exists("datos.txt"):
+    print("Sí existe")
+
 # Crear el archivo CSV
 with open("inventario.csv", "w", newline="", encoding="utf-8") as archivo:
     writer = csv.writer(archivo)
@@ -38,3 +44,4 @@ with open("inventario.csv", "r", encoding="utf-8") as archivo:
 
     for fila in reader:
         print(fila["nombre"], fila["precio"], fila["cantidad"])
+
